@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Project from "./Projects"
+import Project from "../pages/Projects"
 
 const Navbar = () => {
   return (
@@ -10,7 +10,10 @@ const Navbar = () => {
         </Link>
       </div>
       <a href="" className="cta-btn">Resume</a>
-      <a href="Project" className="">Projects</a>
+      <Link href="/Projects">
+        Projects
+      </Link>
+      
     </div>
   )
 }
