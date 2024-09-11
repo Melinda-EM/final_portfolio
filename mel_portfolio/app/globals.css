@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, html {
+    background-color: gray;
+}
+
+.cta-btn {
+    color: yellow;
+    border-radius: 2px;
+}
