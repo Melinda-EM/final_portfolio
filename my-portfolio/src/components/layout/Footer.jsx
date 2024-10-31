@@ -1,7 +1,10 @@
+
 export const Footer = () => {
     return (
-      <footer className="bg-light-blue shadow-[0px_-10px_19px_2px] shadow-light-purple p-4 text-center">
-        <p>&copy; 2024 Melinda ESTEVES MENDES - All Rights Reserved</p>
+      <footer className="bg-light-blue border-t-2 border-l-2 border-white border-b-2 border-r-2 p-4 mt-8">
+        <p className="text-center font-consolas text-lg">
+          © 2024 Melinda ESTEVES MENDES - All Rights Reserved
+        </p>
       </footer>
     );
   };

@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowMinimize, faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 const WindowsContainer = ({ id, title, children }) => {
@@ -24,20 +22,80 @@ const WindowsContainer = ({ id, title, children }) => {
   return (
     <section
       id={id}
-      className={`relative mb-8 shadow-lg ${isMinimized ? 'h-20 overflow-hidden border-b-2 border-purple' : 'h-auto'} hover:scale-105`}
+      className={`
+        relative
+        transition-all duration-200 ease-in-out
+        min-h-[5rem] w-full
+        ${isMaximized ? 'fixed top-0 left-0 right-0 bottom-0 z-50' : 'transform hover:scale-[1.02] mb-8 last:mb-0'}
+      `}
     >
-      <div className="flex items-center bg-gradient-rainbow px-3 py-1 ">
-        <div className="flex space-x-1">
-          <div className="w-3 h-3 rounded-full bg-light-blue"></div>
+      <div className={`
+        bg-light-blue 
+        border-t-2 border-l-2 border-white 
+        border-b-2 border-r-2
+        ${isMaximized ? 'h-full' : 'min-h-[5rem]'}
+        transition-all duration-300
+      `}>
+        <div className="bg-purple text-white p-1 flex justify-between items-center select-none">
+          <div className="flex items-center">
+            <span className="mr-2 ml-2 text-2xl">🗔</span>
+            <span className="font-fsGravity text-3xl font-bold">{title}.exe</span>
+          </div>
+          <div className="flex gap-1">
+            <button
+              onClick={handleMinimize}
+              className="
+                cursor-hand
+                bg-light-blue 
+                border-t-2 border-l-2 border-white 
+                border-b-2 border-r-2
+                px-3 py-0.5
+                mx-0.5 my-2
+                text-dark-blue 
+                hover:bg-light-purple 
+                active:border-t-2 
+                active:border-l-2 
+                active:border-b-2 
+                active:border-r-2 
+                active:border-white
+                focus:outline-none
+                transition-colors
+              "
+            >
+              _
+            </button>
+            <button
+              onClick={handleMaximize}
+              className="
+                cursor-hand
+                bg-light-blue 
+                border-t-2 border-l-2 border-white 
+                border-b-2 border-r-2
+                px-3 py-0.5 
+                mx-1 my-2
+                text-dark-blue 
+                hover:bg-light-purple
+                active:border-t-2 
+                active:border-l-2 
+                active:border-b-2 
+                active:border-r-2 
+                active:border-white
+                focus:outline-none
+                transition-colors
+              "
+            >
+              □
+            </button>
+          </div>
         </div>
-        <h2 className="ml-2 font-bold flex-grow text-3xl font-windows text-white">{title}</h2>
-        <div className="flex space-x-2">
-          <FontAwesomeIcon icon={faWindowMinimize} onClick={handleMinimize} className="cursor-hand w-6" />
-          <FontAwesomeIcon icon={faWindowRestore} onClick={handleMaximize} className="cursor-hand w-6" />
+
+        <div className={`
+          transition-all duration-300 ease-in-out
+          ${isMaximized ? 'h-[calc(100%-2.5rem)] overflow-auto' : ''}
+          ${isMinimized ? 'h-0 overflow-hidden' : 'p-4'}
+        `}>
+          {children}
         </div>
-      </div>
-      <div className="p-4 border-2 border-purple">
-        {children}
       </div>
     </section>
   );

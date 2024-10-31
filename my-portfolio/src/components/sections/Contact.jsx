@@ -1,51 +1,89 @@
-import { WindowsContainer } from "../layout/WindowsContainer";
+import WindowsContainer from "../layout/WindowsContainer";
 
 export const Contact = () => {
   return (
-    <WindowsContainer id="contact" title="Contact">
-      <h2 className="text-4xl text-dark-blue font-fsGravity font-bold mb-4">Contact</h2>
-      <form className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block mb-1">Nom</label>
-          <input 
-            id="name" 
-            placeholder="Votre nom" 
-            className="border rounded-md p-2 w-full" 
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block mb-1">Email</label>
-          <input 
-            id="email" 
-            type="email" 
-            placeholder="Votre email" 
-            className="border rounded-md p-2 w-full" 
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block mb-1">Téléphone</label>
-          <input 
-            id="phone" 
-            type="tel" 
-            placeholder="Votre numéro de téléphone" 
-            className="border rounded-md p-2 w-full" 
-          />
-        </div>
-        <div>
-          <label htmlFor="message" className="block mb-1">Message</label>
-          <textarea 
-            id="message" 
-            placeholder="Votre message" 
-            rows="4" 
-            className="border rounded-md p-2 w-full" 
-          />
-        </div>
-        <div className='flex justify-center items-center'>
-          <button type="submit" className="w-64 bg-purple text-white rounded-md p-2 cursor-hand">
-            Envoyer
-          </button>
-        </div>
-      </form>
+    <WindowsContainer title="Contact" item="contact">
+      <div className="bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple p-4 mb-6">
+        <p className="text-2xl font-fsGravity mb-2 text-dark-blue">
+          Envoyez-moi un message pour toute proposition de contrat, mission ou simplement des renseignements !
+        </p>
+        <p className="font-consolas text-lg text-dark-blue">
+          Je suis impatiente de discuter de vos idées et de collaborer ensemble.
+        </p>
+      </div>
+
+      <div className="bg-light-blue p-4">
+        <form className="space-y-4">
+          {[
+            { id: 'name', label: 'Nom', type: 'text', placeholder: 'Jonh Doe' },
+            { id: 'email', label: 'Email', type: 'email', placeholder: 'john.doe@mail.fr' },
+            { id: 'phone', label: 'Téléphone', type: 'tel', placeholder: '0600000000'},
+            { id: 'message', label: 'Message', type: 'textarea', placeholder: 'Bonjour, je vous contacte au sujet de ...'}
+          ].map((field) => (
+            <div key={field.id} className="bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple p-2">
+              <label htmlFor={field.id} className="block mb-2 font-consolas text-xl text-dark-blue">
+                {field.label}:
+              </label>
+              {field.type === 'textarea' ? (
+                <textarea
+                  id={field.id}
+                  rows="4"
+                  placeholder={field.placeholder}
+                  className="
+                    w-full p-2 
+                    bg-white 
+                    border-t-2 border-l-2 border-gray-800 
+                    border-b-2 border-r-2 border-purple 
+                    font-consolas
+                    focus:outline-none
+                    focus:border-dark-blue
+                  "
+                />
+              ) : (
+                <input
+                  type={field.type}
+                  id={field.id}
+                  placeholder={field.placeholder}
+                  className="
+                    w-full p-2 
+                    bg-white 
+                    border-t-2 border-l-2 border-gray-800 
+                    border-b-2 border-r-2 border-purple 
+                    font-consolas
+                    focus:outline-none
+                    focus:border-dark-blue
+                  "
+                />
+              )}
+            </div>
+          ))}
+
+          <div className="flex justify-center mt-6">
+            <button
+              type="submit"
+              className="
+                bg-light-blue 
+                border-t-2 border-l-2
+                border-b-2 border-r-2 border-purple
+                px-8 py-2
+                font-consolas
+                text-dark-blue
+                active:border-t-2 
+                active:border-l-2 
+                active:border-b-2 
+                active:border-r-2 
+                active:border-white
+                focus:outline-none
+                cursor-hand
+                transition-colors
+              "
+            >
+              <span className="mr-2">📨</span>
+              Envoyer
+            </button>
+          </div>
+        </form>
+      </div>
     </WindowsContainer>
   );
 };
