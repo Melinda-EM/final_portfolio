@@ -2,16 +2,16 @@ import WindowsContainer from '../layout/WindowsContainer';
 
 export const Skills = () => {
   return (
-        <WindowsContainer id="competences" title="Compétences">
+        <WindowsContainer id="compétences" title="Compétences">
           <section className=" mt-2 mb-6">
               <div className="bg-light-blue border-t-2 border-l-2 border-white border-b-2 border-r-2 p-1">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-2">
                   <div className="bg-light-blue border-t-2 border-l-2 border-white border-b-2 border-r-2 p-2">
-                    <div className="bg-purple text-white p-1 mb-2 font-montserrat">
+                    <div className="bg-purple text-white p-1 mb-2 font-consolas text-lg">
                       <span className="mr-2">💻</span>
                       Langages
                     </div>
-                    <ul className="space-y-1 font-consolas">
+                    <ul className="space-y-1 font-windows text-lg">
                       <li className="flex items-center">
                         <span className="mr-2">📄</span>
                         HTML
@@ -44,11 +44,11 @@ export const Skills = () => {
                   </div>
 
                   <div className="bg-light-blue border-t-2 border-l-2 border-white border-b-2 border-r-2 p-2">
-                    <div className="bg-purple text-white p-1 mb-2 font-montserrat">
+                    <div className="bg-purple text-white p-1 mb-2 font-consolas text-lg">
                       <span className="mr-2">🛠️</span>
                       Frameworks
                     </div>
-                    <ul className="space-y-1 font-consolas">
+                    <ul className="space-y-1 font-windows text-lg">
                       <li className="flex items-center">
                         <span className="mr-2">⚛️</span>
                         React
@@ -81,11 +81,11 @@ export const Skills = () => {
                   </div>
 
                   <div className="bg-light-blue border-t-2 border-l-2 border-white border-b-2 border-r-2 p-2">
-                    <div className="bg-purple text-white p-1 mb-2 font-montserrat">
+                    <div className="bg-purple text-white p-1 mb-2 font-consolas text-lg">
                       <span className="mr-2">🔧</span>
                       Env. Technique
                     </div>
-                    <ul className="space-y-1 font-consolas">
+                    <ul className="space-y-1 font-windows text-lg">
                       <li className="flex items-center">
                         <span className="mr-2">🐳</span>
                         Docker
@@ -118,11 +118,11 @@ export const Skills = () => {
                   </div>
 
                   <div className="bg-light-blue border-t-2 border-l-2 border-white border-b-2 border-r-2 p-2">
-                    <div className="bg-purple text-white p-1 mb-2 font-montserrat">
+                    <div className="bg-purple text-white p-1 mb-2 font-consolas text-lg">
                       <span className="mr-2">🎯</span>
                       Soft-skills
                     </div>
-                    <ul className="space-y-1 font-consolas">
+                    <ul className="space-y-1 font-windows text-lg">
                       <li className="flex items-center">
                         <span className="mr-2">👑</span>
                         Leadership

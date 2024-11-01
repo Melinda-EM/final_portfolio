@@ -4,17 +4,17 @@ import CV from '../../assets/img/CV Dev Melinda ESTEVES MENDES.pdf';
 
 export const About = () => {
   return (
-        <WindowsContainer title="À propos">
+        <WindowsContainer id="a-propos" title="À propos">
           <div className="flex flex-col md:flex-row gap-8">
-            <div className="w-full md:w-1/3">
+            <div className="w-full md:w-[25%]">
               <img 
                 src={icone} 
                 alt="Profile" 
                 className="w-64 grayscale mt-20 border-2 border-purple p-1 bg-white"
               />
             </div>
-            <div className="w-full md:w-2/3">
-              <h2 className="text-4xl font-fsGravity text-dark-blue font-bold mb-4">Qui suis-je ?</h2>
+            <div className="w-full md:w-[70%]">
+              <h2 className="text-4xl font-fsGravity text-dark-blue font-bold mb-4 text-center">Qui suis-je ?</h2>
               <div className="bg-light-blue border border-purple p-4 font-consolas">
                 <p>
                   Pour vous parler un peu de moi :
@@ -33,7 +33,7 @@ export const About = () => {
 
               <div className="mt-6">
                 <div className="bg-light-blue border-purple p-4 items-baseline">
-                  <h2 className="text-3xl font-fsGravity text-dark-blue mb-4 text-center">Liens utiles</h2>
+                  <h2 className="text-4xl font-fsGravity font-bold text-dark-blue mb-4 text-center">Liens utiles</h2>
                   <div className="flex justify-center space-x-4 mb-4">
                     <a 
                       href="https://github.com/Melinda-EM" 

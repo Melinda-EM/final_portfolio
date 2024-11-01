@@ -6,8 +6,8 @@ const WindowsContainer = ({ id, title, children }) => {
   const [isMaximized, setIsMaximized] = useState(false);
 
   const handleMinimize = () => {
-    setIsMinimized(true);
-    setIsMaximized(false);
+    setIsMinimized(!isMinimized);
+    if (isMaximized) setIsMaximized(false);
   };
 
   const handleMaximize = () => {
@@ -26,7 +26,10 @@ const WindowsContainer = ({ id, title, children }) => {
         relative
         transition-all duration-200 ease-in-out
         min-h-[5rem] w-full
-        ${isMaximized ? 'fixed top-0 left-0 right-0 bottom-0 z-50' : 'transform hover:scale-[1.02] mb-8 last:mb-0'}
+        ${isMaximized 
+          ? 'fixed top-0 left-0 right-0 bottom-0 z-50 m-0' 
+          : `transform hover:scale-[1.02] ${isMinimized ? 'mb-4' : 'mb-8'} last:mb-0`
+        }
       `}
     >
       <div className={`
@@ -55,9 +58,9 @@ const WindowsContainer = ({ id, title, children }) => {
                 hover:bg-light-purple 
                 active:border-t-2 
                 active:border-l-2 
+                active:border-purple
                 active:border-b-2 
                 active:border-r-2 
-                active:border-white
                 focus:outline-none
                 transition-colors
               "
@@ -77,14 +80,14 @@ const WindowsContainer = ({ id, title, children }) => {
                 hover:bg-light-purple
                 active:border-t-2 
                 active:border-l-2 
+                active:border-purple
                 active:border-b-2 
                 active:border-r-2 
-                active:border-white
                 focus:outline-none
                 transition-colors
               "
             >
-              □
+              ❐
             </button>
           </div>
         </div>

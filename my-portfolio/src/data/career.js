@@ -4,12 +4,12 @@ import ecole from '../assets/img/ecole.png';
 export const career = [
   {
     image: art,
-    title: 'Bac STD2A',
-    description: 'Projet visant à utiliser l\'API de Betaseries pour regrouper les séries vues et à voir.',
+    title: 'Bac_STD2A',
+    description: 'Études de lycée en Arts Appliqués orientées sur les divers domaines qui composent l\'art.',
   },
   {
     image: ecole,
-    title: 'Formation Réceptionniste',
-    description: 'Création d\'un puissance 4.',
+    title: 'Formation_Receptionniste',
+    description: 'Formation professionnelle en gestion de l’accueil, service client, et organisation administrative.',
   },
 ];

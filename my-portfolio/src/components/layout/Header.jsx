@@ -9,9 +9,9 @@ export const Header = () => {
           </button>
           <div className="flex space-x-2">
             {['À propos', 'Compétences', 'Parcours', 'Projets', 'Contact'].map((item) => (
-              <a
+               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item.toLowerCase().replace(' ', '-')}`}
                 className="bg-light-blue border-t border-l text-dark-blue border-white border-b border-r px-4 py-1 hover:bg-light-purple font-fsGravity text-2xl cursor-hand"
               >
                 {item}

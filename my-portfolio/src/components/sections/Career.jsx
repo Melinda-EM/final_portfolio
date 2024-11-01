@@ -14,17 +14,17 @@ export const Career = () => {
   };
 
   return (
-    <WindowsContainer title="Parcours">
+    <WindowsContainer id="parcours" title="Parcours">
       <div className="relative bg-light-blue border-2 border-purple p-4">
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="w-full md:w-2/3">
+          <div className="w-full md:w-2/3 text-center">
             <img
               src={career[currentSlideParcours].image}
               alt={career[currentSlideParcours].title}
               className="w-full h-80 object-fill border-2 border-purple"
             />
-            <p className="mt-4 font-consolas text-center">
-              C:\Parcours\{career[currentSlideParcours].title}
+            <p className="mt-4 font-windows text-2xl text-dark-blue text-center hover:underline">
+              C:\Parcours\{career[currentSlideParcours].title}.exe
             </p>
             <p className="mt-2 font-consolas">
               {career[currentSlideParcours].description}
