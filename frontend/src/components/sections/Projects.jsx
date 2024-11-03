@@ -74,7 +74,10 @@ export const Projects = () => {
       try {
         const response = await fetch(`${API_URL}/api/projects`);
         if (!response.ok) throw new Error('Erreur lors du chargement des projets');
-        setProjects(response);
+
+        const data = await response.json();
+
+        setProjects(data);
         setError(null);
       } catch (err) {
         setError(err.message);
