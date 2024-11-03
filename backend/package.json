@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build-client": "cd ../frontend && npm install && npm run build",
+    "build": "npm install && npm run build-client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
