@@ -9,14 +9,17 @@ const app = express();
 
 connectDB();
 
-app.use(express.json());
 app.use(cors({
-    origin: '*'
+    origin: 'https://upbeat-alignment.railway.internal',
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Authorization', 'Content-Type']
   }));
+
+app.use(express.json());
 app.use(helmet());
 app.use('/images', express.static('public/images', {
     setHeaders: (res, path, stat) => {
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+      res.header('Access-Control-Allow-Origin', 'https://generous-insight.railway.internal');
       res.header('Cross-Origin-Resource-Policy', 'cross-origin');
     }
   }));

@@ -2,6 +2,7 @@ import { Github, Globe } from 'lucide-react';
 import WindowsContainer from '../layout/WindowsContainer';
 import { useState, useEffect } from 'react';
 import { WindowsButton, WindowsLink } from '../ui/Button';
+import { apiClient, API_URL } from '../../data/api';
 
 const CommentModal = ({ isOpen, onClose, onSubmit }) => {
   if (!isOpen) return null;
@@ -71,7 +72,7 @@ export const Projects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/projects');
+        const response = await apiClient.get('/api/projects');
         if (!response.ok) throw new Error('Erreur lors du chargement des projets');
         const data = await response.json();
         setProjects(data);
@@ -90,7 +91,7 @@ export const Projects = () => {
       if (projects.length > 0) {
         try {
           const currentProject = projects[currentSlideIndex];
-          const response = await fetch(`http://localhost:3000/api/projects/${currentProject._id}/comments`);
+          const response = await apiClient.get(`/api/projects/${currentProject._id}/comments`);
           if (!response.ok) throw new Error('Erreur lors du chargement des commentaires');
           const data = await response.json();
           setComments(data);
@@ -117,7 +118,7 @@ export const Projects = () => {
     
     try {
       const currentProject = projects[currentSlideIndex];
-      const response = await fetch(`http://localhost:3000/api/projects/${currentProject._id}/comments`, {
+      const response = await fetch(`${API_URL}/api/projects/${currentProject._id}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -130,7 +131,7 @@ export const Projects = () => {
 
       if (!response.ok) throw new Error('Erreur lors de l\'ajout du commentaire');
 
-      const commentsResponse = await fetch(`http://localhost:3000/api/projects/${currentProject._id}/comments`);
+      const commentsResponse = await apiClient.get(`/api/projects/${currentProject._id}/comments`);
       const updatedComments = await commentsResponse.json();
       setComments(updatedComments);
       
@@ -152,7 +153,7 @@ export const Projects = () => {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-2/3">
             <img
-              src={`http://localhost:3000${currentProject.image}`}
+              src={`${API_URL}${currentProject.image}`}
               alt={currentProject.title}
               className="w-full h-48 md:h-80 object-cover border-2 border-purple"
             />
