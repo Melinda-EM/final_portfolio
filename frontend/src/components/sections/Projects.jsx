@@ -74,8 +74,7 @@ export const Projects = () => {
       try {
         const response = await apiClient.get('/api/projects');
         if (!response.ok) throw new Error('Erreur lors du chargement des projets');
-        const data = await response.json();
-        setProjects(data);
+        setProjects(response);
       } catch (err) {
         setError(err.message);
       } finally {
