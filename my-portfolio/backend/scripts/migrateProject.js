@@ -6,23 +6,41 @@ const fs = require('fs-extra');
 
 const projects = [
   {
-    title: "Previously_on",
-    description: "Projet visant à utiliser l'API de Betaseries pour regrouper les séries vues et à voir.",
-    image: "/Previously.png",
+    title: "Previously_On",
+    description: "Projet visant à utiliser l'API de Betaseries pour regrouper les séries vues et à voir, en React.",
+    image: "/previously.png",
     githubLink: "https://github.com/Melinda-EM/Previously_on"
   },
   {
-    title: "Html Gaming",
-    description: "Création d'un jeu vidéo de type fighting game",
+    title: "Html_Gaming",
+    description: "Création d'un jeu vidéo de type fighting game en HTML, CSS et JavaScript/Phaser.js.",
     image: "/gaming.png",
     githubLink: "https://github.com/Melinda-EM/HtmlGaming"    
   },
   {
-    title: "Connect Four",
-    description: "Création d'un puissance 4.",
+    title: "Connect_Four",
+    description: "Création d'un puissance 4 en Javascript vanilla.",
     image: "/connectFour.png",
     githubLink: "https://github.com/Melinda-EM/ConnectFour"
-  }
+  },
+  {
+    title: "Game_Of_Life",
+    description: "Reproduction de Meetic dans l\'univers du jeu vidéo, en PHP, Javascript et HTML.",
+    image: "/meetic.png",
+    githubLink: "https://github.com/Melinda-EM/MyMeetic"
+  },
+  {
+    title: "Rezotop",
+    description: "Site de mise en relation poseur de film et client pour la société Réflectiv, en Symfony/React.",
+    image: "/rezotop.png",
+    websiteLink: 'https://www.rezotop.com/'
+  },
+  {
+    title: "Pictioble_Io",
+    description: "Reproduction de scribble.io, dessin en temps réel en Golang, HTMl, CSS et Javascript.",
+    image: "/pictioble.io.png",
+    githubLink: "https://github.com/Melinda-EM/Pictioble.io"
+  },
 ];
 
 async function migrateProjects() {

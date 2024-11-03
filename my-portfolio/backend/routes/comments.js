@@ -4,20 +4,20 @@ const Comment = require('../models/Comment');
 const Project = require('../models/Project');
 
 router.get('/projects', async (req, res) => {
-    try {
-      const sort = { createdAt: -1 };
-      
-      const projects = await Project.find()
-        .sort(sort)
-        .select('title description image githubLink createdAt');
-      res.json(projects);
-    } catch (error) {
-      res.status(500).json({ 
-        message: "Erreur lors de la récupération des projets",
-        error: error.message 
-      });
-    }
-  });
+  try {
+    const sort = { createdAt: -1 };
+    
+    const projects = await Project.find()
+      .sort(sort)
+      .select('title description image githubLink websiteLink createdAt');
+    res.json(projects);
+  } catch (error) {
+    res.status(500).json({ 
+      message: "Erreur lors de la récupération des projets",
+      error: error.message 
+    });
+  }
+});
 
 router.get('/projects/:projectId/comments', async (req, res) => {
   try {

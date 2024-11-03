@@ -15,7 +15,11 @@ const projectSchema = new mongoose.Schema({
   },
   githubLink: {
     type: String,
-    required: true
+    required: false
+  },
+  websiteLink: {
+    type: String,
+    required: false
   },
   createdAt: {
     type: Date,

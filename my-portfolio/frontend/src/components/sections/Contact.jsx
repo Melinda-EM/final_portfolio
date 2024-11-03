@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import WindowsContainer from "../layout/WindowsContainer";
 import emailjs from '@emailjs/browser';
+import { WindowsButton } from "../ui/Button";
 
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
@@ -68,12 +69,12 @@ export const Contact = () => {
 
   return (
     <WindowsContainer id="contact" title="Contact" item="contact">
-      <div className="border-t-2 border-l-2 border-b-2 border-r-2 border-purple">
-        <div className="bg-light-blue p-4 text-center">
-          <p className="text-2xl font-fsGravity mb-2 text-dark-blue">
+      <div className="border-2 border-purple p-4 md:p-6">
+        <div className="bg-light-blue p-4 md:p-6 text-center">
+          <p className="text-lg md:text-2xl font-fsGravity mb-2 text-dark-blue">
             Envoyez-moi un message pour toute proposition de contrat, mission ou simplement des renseignements !
           </p>
-          <p className="font-consolas text-lg text-dark-blue">
+          <p className="font-consolas text-base md:text-lg text-dark-blue">
             Je suis impatiente de discuter de vos idées et de collaborer ensemble.
           </p>
         </div>
@@ -87,7 +88,7 @@ export const Contact = () => {
               { id: 'message', label: 'Message', type: 'textarea', placeholder: 'Bonjour, je vous contacte au sujet de ...'}
             ].map((field) => (
               <div key={field.id} className="bg-light-blue border-b-2 border-purple p-4">
-                <label htmlFor={field.id} className="block mb-2 font-consolas text-xl text-dark-blue">
+                <label htmlFor={field.id} className="block mb-2 font-consolas text-lg md:text-xl text-dark-blue">
                   {field.label}:
                 </label>
                 {field.type === 'textarea' ? (
@@ -98,7 +99,7 @@ export const Contact = () => {
                     value={formData[field.id]}
                     onChange={handleChange}
                     placeholder={field.placeholder}
-                    className="w-full p-2 bg-white border-t-2 border-l-2 border-gray-800 border-b-2 border-r-2 border-purple font-consolas focus:outline-none focus:border-dark-blue"
+                    className="w-full p-2 bg-white border-2 border-gray-800 border-purple font-consolas focus:outline-none focus:border-dark-blue"
                   />
                 ) : (
                   <input
@@ -108,7 +109,7 @@ export const Contact = () => {
                     value={formData[field.id]}
                     onChange={handleChange}
                     placeholder={field.placeholder}
-                    className="w-full p-2 bg-white border-t-2 border-l-2 border-gray-800 border-b-2 border-r-2 border-purple font-consolas focus:outline-none focus:border-dark-blue"
+                    className="w-full p-2 text-sm md:text-base bg-white border-2 border-gray-800 border-purple font-consolas focus:outline-none focus:border-dark-blue"
                   />
                 )}
               </div>
@@ -127,30 +128,14 @@ export const Contact = () => {
             )}
 
             <div className="flex justify-center mt-6">
-              <button
+              <WindowsButton
                 type="submit"
                 disabled={status === 'sending'}
-                className={`
-                  bg-light-blue 
-                  border-t-2 border-l-2
-                  border-b-2 border-r-2 border-purple
-                  px-8 py-2
-                  font-consolas
-                  text-dark-blue
-                  active:border-t-2 
-                  active:border-l-2 
-                  active:border-b-2 
-                  active:border-r-2 
-                  active:border-white
-                  focus:outline-none
-                  cursor-hand
-                  transition-colors
-                  ${status === 'sending' ? 'opacity-50 cursor-not-allowed' : ''}
-                `}
+                className={status === 'sending' ? 'opacity-50 cursor-not-allowed' : ''}
               >
                 <span className="mr-2">📨</span>
                 {status === 'sending' ? 'Envoi...' : 'Envoyer'}
-              </button>
+              </WindowsButton>
             </div>
           </form>
         </div>

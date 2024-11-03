@@ -1,6 +1,7 @@
-import { Github } from 'lucide-react';
+import { Github, Globe } from 'lucide-react';
 import WindowsContainer from '../layout/WindowsContainer';
 import { useState, useEffect } from 'react';
+import { WindowsButton, WindowsLink } from '../ui/Button';
 
 const CommentModal = ({ isOpen, onClose, onSubmit }) => {
   if (!isOpen) return null;
@@ -41,19 +42,17 @@ const CommentModal = ({ isOpen, onClose, onSubmit }) => {
           </div>
 
           <div className="flex gap-2 justify-end">
-            <button
+            <WindowsButton
               type="button"
               onClick={onClose}
-              className="bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple px-4 py-1 hover:scale-110 cursor-hand"
             >
               Annuler
-            </button>
-            <button
+            </WindowsButton>
+            <WindowsButton
               type="submit"
-              className="bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple px-4 py-1 hover:scale-110 cursor-hand"
             >
               Envoyer
-            </button>
+            </WindowsButton>
           </div>
         </form>
       </div>
@@ -155,55 +154,61 @@ export const Projects = () => {
             <img
               src={`http://localhost:3000${currentProject.image}`}
               alt={currentProject.title}
-              className="w-full h-80 object-fill border-2 border-purple"
+              className="w-full h-48 md:h-80 object-cover border-2 border-purple"
             />
-            <p className="mt-4 font-consolas text-center">
-              C:\Projets\{currentProject.title}
+            <p className="mt-4 font-windows font-bold text-lg md:text-2xl text-dark-blue text-center hover:underline">
+              C:\Projets\{currentProject.title}.exe
             </p>
-            <p className="mt-2 font-consolas">
+            <p className="mt-2 font-consolas text-sm md:text-base">
               {currentProject.description}
             </p>
-            <div className="flex justify-center mt-4">
-              <a
-                href={currentProject.githubLink}
-                className="bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple px-4 py-1 flex items-center gap-2 hover:scale-110 cursor-hand"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="w-4 h-4" />
-                Voir sur GitHub
-              </a>
+            <div className="flex justify-center mt-4 gap-4">
+              {currentProject.githubLink && (
+                <WindowsLink
+                  href={currentProject.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="w-4 h-4 cursor-hand" />
+                  Voir sur GitHub
+                </WindowsLink>
+              )}
+              {currentProject.websiteLink && (
+                <WindowsLink
+                  href={currentProject.websiteLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Globe className="w-4 h-4" />
+                  Voir le site
+                </WindowsLink>
+              )}
             </div>
           </div>
           <div className="w-full md:w-1/3">
             <div className="bg-light-blue border border-purple p-4 font-consolas">
-              <p>Navigation :</p>
-              <div className="flex justify-center gap-4 mt-4">
-                <button
-                  onClick={handlePrevious}
-                  className="bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple px-4 py-1 hover:scale-110 cursor-hand"
-                >
-                  ← Précédent
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple px-4 py-1 hover:scale-110 cursor-hand"
-                >
-                  Suivant →
-                </button>
-              </div>
+              <p className="text-lg font-bold">Navigation :</p>
+                <div className="flex justify-center gap-4 mt-4">
+                  <WindowsButton onClick={handlePrevious}>
+                    ← Précédent
+                  </WindowsButton>
+                  <WindowsButton onClick={handleNext}>
+                    Suivant →
+                  </WindowsButton>
+                </div>
             </div>
             
             <div className="bg-light-blue border border-purple p-4 font-consolas mt-4">
-              <p>Commentaires :</p>
-              
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="w-full bg-light-blue border-t-2 border-l-2 border-b-2 border-r-2 border-purple px-4 py-1 mt-4 hover:scale-110 cursor-hand"
-              >
-                Laisser un commentaire
-              </button>
-
+              <p className="text-lg font-bold">Commentaires :</p>
+              <div className="flex justify-center gap-4 mt-4">
+                <WindowsButton
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full"
+                >
+                  Laisser un commentaire
+                </WindowsButton>
+              </div>
+  
               <div className="mt-4 max-h-60 overflow-y-auto pr-2">
                 {comments.length > 0 ? (
                   comments.map((comment) => (
@@ -225,7 +230,7 @@ export const Projects = () => {
           </div>
         </div>
       </div>
-
+  
       <CommentModal 
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -233,6 +238,6 @@ export const Projects = () => {
       />
     </WindowsContainer>
   );
-};
+}  
 
 export default Projects;

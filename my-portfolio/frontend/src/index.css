@@ -50,6 +50,20 @@
   transform: scale(1.35);
 }
 
+.windows-focus:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+button:focus, a:focus {
+  outline: none;
+}
+
+::selection {
+  background-color: #000080;
+  color: white;
+}
+
 html, body{
   height: 100%;
   margin: 0;
