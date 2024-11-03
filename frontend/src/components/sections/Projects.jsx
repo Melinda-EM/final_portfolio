@@ -72,9 +72,10 @@ export const Projects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await apiClient.get('/api/projects');
+        const response = await fetch(`${API_URL}/api/projects`);
         if (!response.ok) throw new Error('Erreur lors du chargement des projets');
         setProjects(response);
+        setError(null);
       } catch (err) {
         setError(err.message);
       } finally {
