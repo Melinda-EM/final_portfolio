@@ -3,7 +3,7 @@
 Portfolio de Melinda Esteves Mendes <br/><br/>
 Bienvenue dans mon portfolio en one-page ! Ce projet présente mes compétences, mes projets, et mon parcours de manière interactive et responsive.
 
-🎯 Objectifs
+🎯 Objectifs<br/>
 Ce portfolio a été conçu pour :
 
 Mettre en valeur mes compétences en développement web.
