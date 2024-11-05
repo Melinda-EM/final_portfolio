@@ -1,6 +1,6 @@
 # final_portfolio
 
-Lien du portfolio : https://frontend-mem-portfolio-production.up.railway.app/
+Lien du portfolio : https://melinda-esteves.com/ ou https://frontend-mem-portfolio-production.up.railway.app/
 
 Portfolio de Melinda Esteves Mendes <br/><br/>
 Bienvenue dans mon portfolio en one-page ! Ce projet présente mes compétences, mes projets, et mon parcours de manière interactive et responsive.
