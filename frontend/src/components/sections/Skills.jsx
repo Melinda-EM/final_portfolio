@@ -7,11 +7,11 @@ export const Skills = () => {
         <div className="bg-light-blue border-2 border-white p-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-2">
             <div className="bg-light-blue border-2 border-white p-2">
-              <div className="bg-purple text-white p-1 mb-2 font-consolas text-base md:text-lg">
+              <div className="bg-purple text-white p-1 mb-2 font-consolas text-xl">
                 <span className="mr-2">💻</span>
                 Langages
               </div>
-              <ul className="space-y-1 font-windows text-base md:text-lg">
+              <ul className="space-y-1 font-windows text-xl">
                 <li className="flex items-center"><span className="mr-2">📄</span>HTML</li>
                 <li className="flex items-center"><span className="mr-2">🎨</span>CSS</li>
                 <li className="flex items-center"><span className="mr-2">⚡</span>JavaScript</li>
@@ -23,11 +23,11 @@ export const Skills = () => {
             </div>
 
             <div className="bg-light-blue border-2 border-white p-2">
-              <div className="bg-purple text-white p-1 mb-2 font-consolas text-lg">
+              <div className="bg-purple text-white p-1 mb-2 font-consolas text-xl">
                 <span className="mr-2">🛠️</span>
                 Frameworks
               </div>
-              <ul className="space-y-1 font-windows text-lg">
+              <ul className="space-y-1 font-windows text-xl">
                 <li className="flex items-center"><span className="mr-2">⚛️</span>React</li>
                 <li className="flex items-center"><span className="mr-2">🎵</span>Symfony</li>
                 <li className="flex items-center"><span className="mr-2">🚂</span>Express.js</li>
@@ -39,11 +39,11 @@ export const Skills = () => {
             </div>
 
             <div className="bg-light-blue border-2 border-white p-2">
-              <div className="bg-purple text-white p-1 mb-2 font-consolas text-lg">
+              <div className="bg-purple text-white p-1 mb-2 font-consolas text-xl">
                 <span className="mr-2">🔧</span>
                 Env. Technique
               </div>
-              <ul className="space-y-1 font-windows text-lg">
+              <ul className="space-y-1 font-windows text-xl">
                 <li className="flex items-center"><span className="mr-2">🐳</span>Docker</li>
                 <li className="flex items-center"><span className="mr-2">🐧</span>Linux</li>
                 <li className="flex items-center"><span className="mr-2">📝</span>VSCode</li>
@@ -55,11 +55,11 @@ export const Skills = () => {
             </div>
 
             <div className="bg-light-blue border-2 border-white p-2">
-              <div className="bg-purple text-white p-1 mb-2 font-consolas text-lg">
+              <div className="bg-purple text-white p-1 mb-2 font-consolas text-xl">
                 <span className="mr-2">🎯</span>
                 Soft-skills
               </div>
-              <ul className="space-y-1 font-windows text-lg">
+              <ul className="space-y-1 font-windows text-xl">
                 <li className="flex items-center"><span className="mr-2">👑</span>Leadership</li>
                 <li className="flex items-center"><span className="mr-2">📊</span>Organisation</li>
                 <li className="flex items-center"><span className="mr-2">🤝</span>Travail d&#39;équipe</li>

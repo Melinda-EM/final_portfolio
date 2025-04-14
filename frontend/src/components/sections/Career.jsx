@@ -34,7 +34,7 @@ export const Career = () => {
           <div className="w-full md:w-1/3">
             <div className="bg-light-blue border border-purple p-4 font-consolas">
               <p className="text-lg font-bold">Navigation :</p>
-              <div className="flex justify-center gap-4 mt-4">
+              <div className="flex justify-center gap-6 mt-4">
                 <WindowsButton onClick={handlePrevious}>
                   ← Précédent
                 </WindowsButton>

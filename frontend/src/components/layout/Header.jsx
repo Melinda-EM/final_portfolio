@@ -7,7 +7,7 @@ export const Header = () => {
         <button className="bg-light-blue px-4 py-1 flex items-center">
           <img src={logo} alt="logo" className="cursor-hand w-16 h-16 md:w-20 md:h-20 mr-2" />
         </button>
-        <div className="flex flex-wrap justify-center space-x-2">
+        <div className="flex flex-wrap justify-center space-x-5">
           {['À propos', 'Compétences', 'Parcours', 'Projets', 'Contact'].map((item) => (
             <a
               key={item}

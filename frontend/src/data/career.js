@@ -2,7 +2,8 @@ import art from '../assets/img/art.png';
 import ecole from '../assets/img/ecole.png';
 import reception from '../assets/img/reception.png';
 import webac from '../assets/img/webac.jpg';
-import reflectiv from '../assets/img/reflectiv.jpg'
+import reflectiv from '../assets/img/reflectiv.jpg';
+import epitech from '../assets/img/epitech.jpg'
 
 
 export const career = [
@@ -31,4 +32,9 @@ export const career = [
     title: 'Alternante_Développeuse_Web',
     description: 'Alternance à Réflectiv Windows Films à Bonneuil s/Marne.',
   },
+  {
+    image: epitech,
+    title: 'Accompagnatrice_pédagogique',
+    description: '.',
+  }
 ];

@@ -34,8 +34,8 @@ const WindowsContainer = ({ id, title, children }) => {
     >
       <div className={`
         bg-light-blue 
-        border-t-2 border-l-2 border-white 
-        border-b-2 border-r-2
+        border-t-2 border-l-2
+        border-b-2 border-r-2 border-light-purple border-2
         ${isMaximized ? 'h-full' : 'min-h-[5rem]'}
         transition-all duration-300
       `}>

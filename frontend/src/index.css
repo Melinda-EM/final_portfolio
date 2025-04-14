@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
   font-family: "Consolas";
   src: url("./assets/fonts/Consolas-regular.TTF") format("truetype");

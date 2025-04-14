@@ -11,7 +11,7 @@ export const About = () => {
           <img 
             src={icone} 
             alt="Profile" 
-            className="w-48 md:w-64 grayscale mt-4 md:mt-20 border-2 border-purple p-1 bg-white max-w-full"
+            className="w-48 md:w-72 grayscale mt-4 md:mt-4 md:mb-4 border-2 border-purple p-1 bg-white max-w-full"
           />
         </div>
         <div className="w-full md:w-3/4 px-4 md:px-0">
@@ -35,7 +35,7 @@ export const About = () => {
           <div className="mt-6">
             <div className="bg-light-blue border-purple p-4 items-baseline">
               <h2 className="text-4xl font-fsGravity font-bold text-dark-blue mb-4 text-center">Liens utiles</h2>
-              <div className="flex flex-col md:flex-row justify-center space-x-0 md:space-x-4 mb-4">
+              <div className="flex flex-col md:flex-row justify-center space-x-0 md:space-x-8 mb-4">
                 <WindowsLink
                   href="https://github.com/Melinda-EM"
                   target="_blank"
