@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 
 @font-face {
   font-family: "Consolas";
@@ -66,6 +66,10 @@ button:focus, a:focus {
   color: white;
 }
 
+/* *{
+  box-sizing: content-box;
+} */
+
 html, body{
   height: 100%;
   margin: 0;
@@ -81,7 +85,29 @@ footer {
   margin-top: auto;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px #5B67ED;
+	background-color: rgba(91, 103, 237, 0.5);
+}
+
+::-webkit-scrollbar
+{
+	width: 15px;
+	/* background-color: #F5F5F5; */
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(90deg,
+	                                          rgba(129, 38, 225, 1) 0%,
+											  rgba(131, 83, 227, 1) 35%,
+											  /* transparent 100%, */
+											  rgba(1, 52, 121, 1))
+}
+
+/* ::-webkit-scrollbar {
   width: 20px;
 }
 
@@ -119,4 +145,4 @@ footer {
 .bg-light-purple:hover, .bg-blue:hover, .bg-dark-blue:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+} */

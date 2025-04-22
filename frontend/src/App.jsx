@@ -26,7 +26,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-blue-100 cursor-custom min-h-screen flex flex-col relative overflow-x-hidden">
+    <div className="bg-b cursor-custom min-h-screen flex flex-col relative overflow-x-hidden">
       <Header />
       <main className="flex-grow w-full max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-8">
         <About />

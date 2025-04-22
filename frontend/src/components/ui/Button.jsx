@@ -36,7 +36,7 @@ export const WindowsLink = ({
     {...props}
     className={`
       cursor-hand
-      px-4 py-1 
+      px-2 py-1 text-lg
       bg-gray-200 
       border-t-2 border-l-2 border-r-2 border-b-2 
       border-t-white border-l-white 

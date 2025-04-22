@@ -40,7 +40,7 @@ export const About = () => {
                   href="https://github.com/Melinda-EM"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-2 md:mb-0"
+                  className="mb-2 md:mb-0 shadow-lg shadow-slate-700"
                 >
                   <span className="mr-2">💻</span>
                   GitHub
@@ -49,7 +49,7 @@ export const About = () => {
                   href="https://www.linkedin.com/in/melinda-e-m/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-2 md:mb-0"
+                  className="mb-2 md:mb-0 shadow-lg shadow-slate-700"
                 >
                   <span className="mr-2">💼</span>
                   LinkedIn
@@ -58,7 +58,7 @@ export const About = () => {
                   href={CV}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-2 md:mb-0"
+                  className="mb-2 md:mb-0 shadow-lg shadow-slate-700"
                 >
                   <span className="mr-2">👀</span>
                   Voir CV
@@ -66,7 +66,7 @@ export const About = () => {
                 <WindowsLink
                   href={CV}
                   download="CV_Melinda_ESTEVES_MENDES.pdf"
-                  className="mb-2 md:mb-0"
+                  className="mb-2 md:mb-0 shadow-lg shadow-slate-700"
                 >
                   <span className="mr-2">💾</span>
                   Télécharger CV

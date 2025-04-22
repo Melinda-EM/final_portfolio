@@ -25,10 +25,10 @@ const WindowsContainer = ({ id, title, children }) => {
       className={`
         relative
         transition-all duration-200 ease-in-out
-        min-h-[5rem] w-full
+        min-h-[5rem] w-full shadow-xl shadow-slate-700
         ${isMaximized 
           ? 'fixed top-0 left-0 right-0 bottom-0 z-50 m-0' 
-          : `transform hover:scale-[1.02] ${isMinimized ? 'mb-4' : 'mb-8'} last:mb-0`
+          : `transform hover:scale-[1.02] ${isMinimized ? 'mb-4' : 'mb-12'} last:mb-0`
         }
       `}
     >
@@ -41,7 +41,7 @@ const WindowsContainer = ({ id, title, children }) => {
       `}>
         <div className="bg-purple text-white p-1 flex justify-between items-center select-none">
           <div className="flex items-center">
-            <span className="mr-2 ml-2 text-2xl">🗔</span>
+            <span className="mr-2 ml-2 text-3xl">🗔</span>
             <span className="font-fsGravity text-3xl font-bold">{title}.exe</span>
           </div>
           <div className="flex gap-1">

@@ -131,9 +131,9 @@ export const Contact = () => {
               <WindowsButton
                 type="submit"
                 disabled={status === 'sending'}
-                className={status === 'sending' ? 'opacity-50 cursor-not-allowed' : ''}
+                className={`shadow-lg shadow-slate-700 text-lg ${status} === 'sending' ? 'opacity-50 cursor-not-allowed' : '' `}
               >
-                <span className="mr-2">📨</span>
+                <span className="mr-2 mb-2">📨</span>
                 {status === 'sending' ? 'Envoi...' : 'Envoyer'}
               </WindowsButton>
             </div>
